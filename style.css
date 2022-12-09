@@ -1,0 +1,270 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Cairo", "Poppins", sans-serif;
+  font-size: 18px;
+}
+main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: relative;
+}
+section:nth-child(1) {
+  background-repeat: no-repeat;
+  background-image: url(./images/bg-main-desktop.png);
+  background-position: center;
+  background-size: cover;
+  width: 30%;
+}
+section:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  padding: 15px;
+}
+article {
+  width: 440px;
+  min-height: 300px;
+}
+form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.input_style {
+  outline: none;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+  margin-bottom: 15px;
+  padding: 5px;
+  width: 100%;
+  display: inline-block;
+}
+
+#cvc_date {
+  display: flex;
+}
+#date_div,
+#cvc_div {
+  width: 50%;
+}
+
+.date_style {
+  width: 40%;
+}
+
+#btn,
+.btn_reload {
+  margin-top: 30px;
+  width: 100%;
+  color: #fff;
+  border-radius: 10px;
+  background-color: #420961;
+  height: 40px;
+
+  cursor: pointer;
+}
+
+#btn:hover,
+.btn_reload:hover {
+  background-color: #34084e;
+}
+#btn:active,
+.btn_reload:active {
+  background-color: #220930;
+}
+
+#front_card,
+#back_card {
+  padding: 25px;
+  border-radius: 15px;
+  width: 450px;
+  height: 13em;
+  position: absolute;
+
+  color: #fff;
+}
+#front_card {
+  background-image: url(./images/bg-card-front.png);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: h4_anime 2s forwards alternate;
+  z-index: 999999999;
+}
+
+@keyframes h4_anime {
+  0% {
+    left: -80vw;
+  }
+  100% {
+    left: 5em;
+    top: 5em;
+  }
+}
+#back_card {
+  background-image: url(./images/bg-card-back.png);
+  background-position: center;
+  animation: h5_anime 2s forwards alternate;
+}
+@keyframes h5_anime {
+  0% {
+    left: -80vw;
+  }
+  100% {
+    left: 7em;
+    top: 15em;
+  }
+}
+
+#card_info,
+#logo {
+  height: 50%;
+}
+#card_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#card_info h1 {
+  margin-top: 20px;
+}
+#circle {
+  height: 70px;
+  width: 70px;
+  border-radius: 100px;
+  display: inline-block;
+  background-color: #fff;
+}
+
+#border {
+  height: 30px;
+  width: 30px;
+  border-radius: 100px;
+
+  display: inline-block;
+  position: absolute;
+  top: 50px;
+  left: 115px;
+}
+#info {
+  display: flex;
+  justify-content: space-between;
+}
+
+#img_bank {
+  position: absolute;
+  top: 30px;
+  left: 35px;
+}
+#visa_cvc_card {
+  position: absolute;
+  top: 42%;
+  left: 80%;
+}
+#completed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: none;
+  transition: all 0.5s ease-out;
+  animation: completed 2s alternate forwards;
+}
+input[type="text"]:focus {
+  -webkit-box-shadow: 0 0 2px 1px #0075ff;
+  -moz-box-shadow: 0 0 2px 1px #0075ff;
+  box-shadow: 0 0 2px 1px #0075ff;
+  border: 1px solid #0075ff;
+  background: #fafafa;
+}
+.error {
+  -webkit-box-shadow: 0 0 2px 1px red;
+  -moz-box-shadow: 0 0 2px 1px red;
+  box-shadow: 0 0 2px 1px red;
+  border: 1px solid red;
+}
+@keyframes completed {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#completed h1 {
+  font-size: 30px;
+  font-weight: 500;
+  margin: 20px;
+}
+#completed p {
+  color: #555;
+
+  font-size: 20px;
+}
+/* responsive */
+@media (max-width: 980px) {
+  main {
+    flex-direction: column;
+  }
+
+  section:nth-child(1) {
+    width: 100vw;
+    height: 40vh;
+    background-image: url(./images/bg-main-mobile.png);
+  }
+  section:nth-child(2) {
+    width: 100vw;
+    height: 60vh;
+  }
+
+  @keyframes h4_anime {
+    0% {
+      left: -80%;
+      top: 15%;
+    }
+    100% {
+      left: 3em;
+      top: 1em;
+    }
+  }
+
+  @keyframes h5_anime {
+    0% {
+      left: -80%;
+      top: 1%;
+    }
+    100% {
+      left: 15em;
+      top: 1%;
+    }
+  }
+  body {
+    font-size: 14px;
+  }
+}
+@media (max-width: 450px) {
+  body {
+    font-size: 10px;
+  }
+  section:nth-child(1) {
+    background-image: url(./images/bg-main-mobile.png);
+  }
+  .label {
+    display: inline-block;
+    font-size: 15px;
+    height: 20px;
+  }
+}
+input::placeholder {
+  color: hsl(270, 3%, 87%);
+  font-size: 1.3em;
+}
